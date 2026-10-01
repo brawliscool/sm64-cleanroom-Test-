@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "Super Mario 64 Clean Room",
+  "short_name": "SM64",
+  "description": "Installable touch-friendly browser build of the clean room SM64 project.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#101318",
+  "theme_color": "#101318"
+}
