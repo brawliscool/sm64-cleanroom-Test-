@@ -4,3 +4,7 @@ __pycache__/
 *.n64
 *.v64
 baserom.*
+
+public/
+
+public/
