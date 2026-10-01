@@ -116,8 +116,12 @@ var Module = {
 
 // Touch controls send the same key codes used by the desktop build.
 if (window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0) document.body.classList.add('touch');
+var keyboardMap = { KeyW:[87,'w'], KeyA:[65,'a'], KeyS:[83,'s'], KeyD:[68,'d'], KeyL:[76,'l'], Comma:[188,','], KeyK:[75,'k'], Space:[32,' '], ShiftRight:[16,'Shift'] };
 function key(code, down) {
-  window.dispatchEvent(new KeyboardEvent(down ? 'keydown' : 'keyup', { code: code, key: code === 'Comma' ? ',' : undefined, bubbles: true }));
+  var mapped = keyboardMap[code] || [0, ''];
+  Module.canvas.dispatchEvent(new KeyboardEvent(down ? 'keydown' : 'keyup', {
+    code: code, key: mapped[1], keyCode: mapped[0], which: mapped[0], bubbles: true, cancelable: true
+  }));
 }
 document.querySelectorAll('.btn').forEach(function (button) {
   var code = button.dataset.code;
