@@ -8,7 +8,10 @@ with **every asset the decomp normally extracts from a ROM regenerated**: textur
 HUD icons, instrument and sound-effect samples. No ROM is needed to build or play it.
 
 Controls: `W A S D` move · `L` A (jump) · `,` B (punch) · `K` Z · `Space` Start ·
-arrow keys C buttons · `Right Shift` R · gamepads work too. Saves are kept in the browser.
+arrow keys C buttons · `Right Shift` R · gamepads work too. iPhone and other touch devices have
+on-screen controls; play in landscape. Add the site to the Home Screen from Safari to install it
+as a full-screen web app. The browser animation loop is capped at 60 callbacks per second. Saves
+are kept in the browser.
 
 ## What is kept, what is generated
 
@@ -50,7 +53,7 @@ python -m games.sm64.extract_spec sm64_dirty                    # -> games/sm64/
 git clone -c core.autocrlf=false https://github.com/sm64-port/sm64-port sm64-port
 python -m games.sm64.generate sm64-port sm64_clean              # assets into a clean tree
 games/sm64/build_web.sh sm64_clean                              # patches + make TARGET_WEB=1
-games/sm64/make_site.sh sm64_clean site                         # index.html + js + wasm
+games/sm64/make_site.sh sm64_clean site                         # index.html + manifest + offline shell + js + wasm
 python -m games.sm64.taint_report sm64_dirty sm64_clean         # optional check
 ```
 
