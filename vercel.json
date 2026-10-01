@@ -1,0 +1,6 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "sh games/sm64/vercel-build.sh",
+  "installCommand": "true",
+  "outputDirectory": "public"
+}
